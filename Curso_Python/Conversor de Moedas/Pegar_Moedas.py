@@ -1,11 +1,22 @@
 import xmltodict
 
-with open("Moedas.xml", "rb") as arquivo_moedas:
-    dic_moedas = xmltodict.parse(arquivo_moedas)
+def nomes_moedas():
+    with open("Curso_Python/Conversor de Moedas/moedas.xml", "rb") as arquivo_moedas:
+        dic_moedas = xmltodict.parse(arquivo_moedas)
 
-moedas = dic_moedas["xml"]
+    moedas = dic_moedas["xml"]
+    return moedas
 
-with open("Conversoes.xml", "rb") as arquivo_conversoes:
-    dic_conversoes = xmltodict.parse(arquivo_conversoes)
+def conversoes_disponiveis():
+    with open("Curso_Python/Conversor de Moedas/conversoes.xml", "rb") as arquivo_conversoes:
+        dic_conversoes = xmltodict.parse(arquivo_conversoes)
 
-conversoes = dic_conversoes["xml"]
+    conversoes = dic_conversoes["xml"]
+    dic_conversoes_disponiveis = {}
+    for par_conversao in conversoes:
+        moeda_origem, moeda_destino = par_conversao.split("-")
+        if moeda_origem in dic_conversoes_disponiveis:
+            dic_conversoes_disponiveis[moeda_origem].append(moeda_destino)
+        else:
+            dic_conversoes_disponiveis[moeda_origem] = [moeda_destino]
+    return dic_conversoes_disponiveis
