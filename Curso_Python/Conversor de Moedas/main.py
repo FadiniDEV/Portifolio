@@ -28,6 +28,9 @@ campo_moeda_destino = customtkinter.CTkOptionMenu(janela, values=["Selecione uma
 def validar_float(texto):
     if texto == "" or texto == "-":
         return True
+    if texto.replace(",", "").replace(".", "").isdigit():
+        return True
+    return False
 
 validacao = janela.register(validar_float)
 
