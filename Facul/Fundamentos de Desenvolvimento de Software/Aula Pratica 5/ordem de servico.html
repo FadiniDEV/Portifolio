@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordem de Serviço</title>
+</head>
+<body>
+    <h1>Cadastro de Pc's</h1>
+    <form method="post" action="teste.jsp">
+        Data: <input type="date" name="data" required><br><br>
+        
+        Nome do Cliente: <input type="text" name="nome" placeholder="Insira o nome do cliente" required><br><br>
+        
+        Modelo do PC: <input type="text" name="modelo" placeholder="Insira o modelo do PC" required><br><br>
+        
+        Diagnóstico:
+        <select name="diagnostico" required>
+            <option value="formatacao">Formatação</option>
+            <option value="trocaHD">Troca de HD</option>
+            <option value="limpeza">Limpeza</option>
+            <option value="trocaSSD">Troca de SSD</option>
+            <option value="trocaTela">Troca de Tela</option>
+            <option value="trocaPasta">Troca de Pasta Térmica</option>
+            <option value="outro">Outro</option>
+        </select><br><br>
+        
+        Valor: <input type="text" name="valor" placeholder="R$" required><br><br>
+        
+        Está Ligando?
+            <input type="radio" name="ligando" value="sim" required> Sim
+            <input type="radio" name="ligando" value="nao" required> Não<br><br>
+        
+        Defeitos: <br>
+        <input type="checkbox" name="tela" value="sim"> Tela <br>
+        <input type="checkbox" name="carcaca" value="sim"> Carcaça <br>
+        <input type="checkbox" name="" value="sim"> Bateria <br>
+        <input type="checkbox" name="detalhes" value="sim"> Carregador <br>
+        <input type="checkbox" name="detalhes" value="sim"> Teclado <br>
+        <input type="checkbox" name="detalhes" value="sim"> SSD/HD <br>
+        <input type="checkbox" name="detalhes" value="sim"> Memória RAM <br><br>
+        
+        Informações Adicionais: <br>
+        <textarea name="informacoes" cols="40" rows="6" placeholder="Insira as alegações do cliente..."></textarea><br><br><br>
+
+        <input type="submit" value="Enviar">
+
+    </form>
+</body>
+</html>

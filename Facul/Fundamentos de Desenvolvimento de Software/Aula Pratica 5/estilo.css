@@ -1,0 +1,35 @@
+.animais{
+    color: rgb(1, 29, 66);
+    font-family: Arial Black;
+    font-size: 40px;
+    text-align: center;
+    background-color: rgb(197, 3, 204);
+    border: 1px solid black;
+    margin-top: 50px;
+    border-radius: 10px;
+}
+
+.fotos{
+    width: 300px;
+    height: 200px;
+    border: 2px solid rgb(197, 3, 204);
+    border-radius: 10px;
+}
+
+.animaisbaixo{
+    color: rgb(1, 29, 66);
+    font-family: Arial Black;
+    font-size: 40px;
+    text-align: center;
+    background-color: rgb(197, 3, 204);
+    border: 1px solid black;
+    margin-top: 100px;
+    border-radius: 10px;
+
+}
+
+.fotos:hover{
+    width: 305px;
+    height: 205px;
+    transition: 0.1s;
+}
