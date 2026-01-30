@@ -3,6 +3,23 @@ import 'package:helloworld/app_controller.dart';
 import 'package:helloworld/home_page.dart';
 import 'package:helloworld/login_page.dart';
 
+class CustomInputStyle {
+  static InputDecoration getFieldDecoration({
+    required String label,
+    required Color borderColor,
+  }) {
+    return InputDecoration(
+      enabledBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: borderColor, width: 1.5),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: Colors.red, width: 2),
+      ),
+      labelText: label,
+    );
+  }
+}
+
 class AppWidget extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
@@ -20,7 +37,10 @@ class AppWidget extends StatelessWidget{
             ),
             brightness: brightness,
           ),
-          home: LoginPage(),
+          routes: {
+            "/": (context) => LoginPage(),
+            "/home": (context) => HomePage(),
+          },
         );
       },
     );
