@@ -4,4 +4,3 @@ import 'package:helloworld/appwidget.dart';
 main() {
   runApp(AppWidget());
 }
-
