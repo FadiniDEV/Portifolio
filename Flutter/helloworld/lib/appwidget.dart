@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:helloworld/app_controller.dart';
 import 'package:helloworld/home_page.dart';
+import 'package:helloworld/login_page.dart';
 
 class AppWidget extends StatelessWidget{
   @override
@@ -19,7 +20,7 @@ class AppWidget extends StatelessWidget{
             ),
             brightness: brightness,
           ),
-          home: HomePage(),
+          home: LoginPage(),
         );
       },
     );

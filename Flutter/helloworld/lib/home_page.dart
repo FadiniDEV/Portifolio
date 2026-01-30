@@ -16,14 +16,33 @@ class HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Contador Simples"),
+        actions: [
+          Icon(Icons.light_mode),
+          CustomSwitch(),
+        ],
       ),
       
-      body: Center(
-          child: Switch(
-          value: AppController.instance.isLightTheme, 
-          onChanged: (value){
-            AppController.instance.changeTheme();
-            }),
+      body: Container(
+
+        width: double.infinity,
+        height: double.infinity,
+
+        child: Column(
+
+          mainAxisAlignment: MainAxisAlignment.center,
+
+          children: [
+            Text(
+              "Você clicou $counter vezes",
+              style: TextStyle(fontSize: 25),
+            ),
+
+            Text(
+              "Por favor, clique mais!",
+              style: TextStyle(fontSize: 16),
+            ),
+          ],
+        ),
       ),
 
       floatingActionButton: FloatingActionButton(
@@ -36,5 +55,18 @@ class HomePageState extends State<HomePage> {
       ),
       
     );
+  }
+}
+
+class CustomSwitch extends StatelessWidget {
+  const CustomSwitch({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Switch(
+          value: AppController.instance.isLightTheme, 
+          onChanged: (value){
+            AppController.instance.changeTheme();
+            });
   }
 }
